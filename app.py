@@ -20,10 +20,10 @@ ntl_url = "https://economictimes.indiatimes.com/marketstats/duration-1d,exchange
 btg_url = "https://economictimes.indiatimes.com/marketstats/duration-1d,exchange-bse,pageno-1,pid-0,sort-intraday,sortby-percentchange,sortorder-desc.cms"
 btl_url = "https://economictimes.indiatimes.com/marketstats/duration-1d,exchange-bse,pageno-1,pid-1,sort-intraday,sortby-percentchange,sortorder-asc.cms"
 
-r = requests.get(url)
-ntl_r = requests.get(ntl_url)
-btg_r = requests.get(btg_url)
-btl_r = requests.get(btl_url)
+r = requests.get(url,verify=False)
+ntl_r = requests.get(ntl_url,verify=False)
+btg_r = requests.get(btg_url,verify=False)
+btl_r = requests.get(btl_url,verify=False)
 
 htmlContent = r.content
 ntl_htmlContent = ntl_r.content
@@ -441,6 +441,6 @@ def gainers_losers():
 
 }
 
-# if __name__ == '__main__':
-#     server.run(debug=True)
+if __name__ == '__main__':
+    server.run(debug=True)
    
